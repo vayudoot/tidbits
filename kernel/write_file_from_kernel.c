@@ -15,15 +15,11 @@ driver_file_open(const char *path, int flags, int mode)
         return (filp);
 }
 
-
-
 void
 driver_file_close(struct file *filp)
 {
         filp_close(filp, NULL);
 }
-
-
 
 int
 driver_file_write(struct file *file, unsigned long long offset, unsigned char *data, unsigned int size)
@@ -49,9 +45,6 @@ driver_file_write(struct file *file, unsigned long long offset, unsigned char *d
         return (ret);
 }
 
-
-
-
 int
 driver_file_read(struct file *file, unsigned long long offset, unsigned char *data, unsigned int size)
 {
@@ -75,4 +68,3 @@ driver_file_read(struct file *file, unsigned long long offset, unsigned char *da
         set_fs(oldfs);
         return (ret);
 }
-
